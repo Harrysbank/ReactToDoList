@@ -7,8 +7,6 @@ const Form =(props)=>{
 
     const submitHandler=(event)=>{
         event.preventDefault();
-        console.log(event.target);
-        console.log(inputRef.current.value);
         const inputvalue=inputRef.current.value;
         if(inputvalue.trim().length!==0){
             props.addlist(inputvalue);

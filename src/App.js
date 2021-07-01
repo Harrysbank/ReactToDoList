@@ -20,11 +20,18 @@ function APP(){
     });
   };
 
+  const removeList=(id)=>{
+    setList(previous=>{
+      const List=[...previous];
+      const newList=List.filter(list=>list.id!==id);
+      return newList;
+    });
+  };
 
   return (
     <Fragment>
       <Form addlist={addToList}></Form>
-      <Shownlist List={List}/>
+      <Shownlist removeList={removeList} List={List}/>
     </Fragment>
   );
 }
